@@ -16,11 +16,11 @@ option = {
 ARGV << '-h' if ARGV.empty?
 
 OptionParser.new do |opt|
-    opt.on('-a',   '--aws_acnt', "AWS account (default: #{option[:target_aws_acnt]}) / AWS Account List: --list_aws_acnt") {|v|
+    opt.on('-a value',   '--aws_acnt', "AWS account (Default: #{option[:target_aws_acnt]}) / AWS Account List: --list_aws_acnt") {|v|
         option[:target_aws_acnt] = v
     }
 
-    opt.on('-r',   '--role', "Role (default: #{option[:target_role]}) / Role List: --list_role") {|v|
+    opt.on('-r value',   '--role', "Role (Default: #{option[:target_role]}) / Role List: --list_role") {|v|
         option[:target_role] = v
     }
 
@@ -32,7 +32,7 @@ OptionParser.new do |opt|
         option[:mfa_token] = v
     }
 
-    opt.on('--region value', "AWS Region (default: #{option[:aws_region]})") {|v|
+    opt.on('--region value', "AWS Region (Default: #{option[:aws_region]})") {|v|
         option[:aws_region] = v
     }
 
